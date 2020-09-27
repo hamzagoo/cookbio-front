@@ -1,13 +1,13 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'ngx-activitee',
+  selector: 'ngx-product',
   template: `
     <router-outlet></router-outlet>
   `,
-  styles: [``]
+  styles: [``],
 })
-export class ActiviteeComponent implements OnInit {
+export class ProductComponent implements OnInit {
 
   constructor() { }
 

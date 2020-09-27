@@ -1,51 +1,82 @@
 import { NbMenuItem } from '@nebular/theme';
 
 export const MENU_ITEMS: NbMenuItem[] = [
-  {
-    title: 'E-commerce',
-    icon: 'shopping-cart-outline',
-    link: '/pages/dashboard',
-    home: true,
-  },
+
   {
     title: 'IoT Dashboard',
-    icon: 'home-outline',
-    link: '/pages/iot-dashboard',
+    icon: 'nb-home',
+    link: '/pages/iot-dashboard/chartProjet',
+    home: true,
+    
   },
   {
-    title: 'FEATURES',
-    group: true,
-  },
-  {
-    title: 'Layout',
-    icon: 'layout-outline',
+    title: 'Parametres Généraux',
+    icon: 'nb-gear',
     children: [
       {
+        title: 'Product',
+        link: '/pages/parametre-generaux/product/list'
+      }
+    ]
+  },
+  
+  /*{
+    title: 'Extra Components',
+    icon: 'nb-star',
+    children: [
+      {
+        title: 'Calendar',
+        link: '/pages/extra-components/calendar',
+      },
+      {
         title: 'Stepper',
-        link: '/pages/layout/stepper',
+        link: '/pages/extra-components/stepper',
       },
       {
         title: 'List',
-        link: '/pages/layout/list',
+        link: '/pages/extra-components/list',
       },
       {
         title: 'Infinite List',
-        link: '/pages/layout/infinite-list',
+        link: '/pages/extra-components/infinite-list',
       },
       {
         title: 'Accordion',
-        link: '/pages/layout/accordion',
+        link: '/pages/extra-components/accordion',
+      },
+      {
+        title: 'Progress Bar',
+        link: '/pages/extra-components/progress-bar',
+      },
+      {
+        title: 'Spinner',
+        link: '/pages/extra-components/spinner',
+      },
+      {
+        title: 'Alert',
+        link: '/pages/extra-components/alert',
+      },
+      {
+        title: 'Tree',
+        link: '/pages/extra-components/tree',
       },
       {
         title: 'Tabs',
-        pathMatch: 'prefix',
-        link: '/pages/layout/tabs',
+        link: '/pages/extra-components/tabs',
+      },
+      {
+        title: 'Calendar Kit',
+        link: '/pages/extra-components/calendar-kit',
+      },
+      {
+        title: 'Chat',
+        link: '/pages/extra-components/chat',
       },
     ],
   },
   {
     title: 'Forms',
-    icon: 'edit-2-outline',
+    icon: 'nb-compose',
     children: [
       {
         title: 'Form Inputs',
@@ -67,7 +98,7 @@ export const MENU_ITEMS: NbMenuItem[] = [
   },
   {
     title: 'UI Features',
-    icon: 'keypad-outline',
+    icon: 'nb-keypad',
     link: '/pages/ui-features',
     children: [
       {
@@ -90,7 +121,7 @@ export const MENU_ITEMS: NbMenuItem[] = [
   },
   {
     title: 'Modal & Overlays',
-    icon: 'browser-outline',
+    icon: 'nb-layout-default',
     children: [
       {
         title: 'Dialog',
@@ -115,38 +146,26 @@ export const MENU_ITEMS: NbMenuItem[] = [
     ],
   },
   {
-    title: 'Extra Components',
-    icon: 'message-circle-outline',
+    title: 'Bootstrap',
+    icon: 'nb-gear',
     children: [
       {
-        title: 'Calendar',
-        link: '/pages/extra-components/calendar',
+        title: 'Form Inputs',
+        link: '/pages/bootstrap/inputs',
       },
       {
-        title: 'Progress Bar',
-        link: '/pages/extra-components/progress-bar',
+        title: 'Buttons',
+        link: '/pages/bootstrap/buttons',
       },
       {
-        title: 'Spinner',
-        link: '/pages/extra-components/spinner',
-      },
-      {
-        title: 'Alert',
-        link: '/pages/extra-components/alert',
-      },
-      {
-        title: 'Calendar Kit',
-        link: '/pages/extra-components/calendar-kit',
-      },
-      {
-        title: 'Chat',
-        link: '/pages/extra-components/chat',
+        title: 'Modal',
+        link: '/pages/bootstrap/modal',
       },
     ],
   },
   {
     title: 'Maps',
-    icon: 'map-outline',
+    icon: 'nb-location',
     children: [
       {
         title: 'Google Maps',
@@ -168,7 +187,7 @@ export const MENU_ITEMS: NbMenuItem[] = [
   },
   {
     title: 'Charts',
-    icon: 'pie-chart-outline',
+    icon: 'nb-bar-chart',
     children: [
       {
         title: 'Echarts',
@@ -186,7 +205,7 @@ export const MENU_ITEMS: NbMenuItem[] = [
   },
   {
     title: 'Editors',
-    icon: 'text-outline',
+    icon: 'nb-title',
     children: [
       {
         title: 'TinyMCE',
@@ -199,32 +218,28 @@ export const MENU_ITEMS: NbMenuItem[] = [
     ],
   },
   {
-    title: 'Tables & Data',
-    icon: 'grid-outline',
+    title: 'Tables',
+    icon: 'nb-tables',
     children: [
       {
         title: 'Smart Table',
         link: '/pages/tables/smart-table',
       },
-      {
-        title: 'Tree Grid',
-        link: '/pages/tables/tree-grid',
-      },
     ],
   },
   {
     title: 'Miscellaneous',
-    icon: 'shuffle-2-outline',
+    icon: 'nb-shuffle',
     children: [
       {
         title: '404',
         link: '/pages/miscellaneous/404',
       },
     ],
-  },
-  {
+  },*/
+  /*{
     title: 'Auth',
-    icon: 'lock-outline',
+    icon: 'nb-locked',
     children: [
       {
         title: 'Login',
@@ -243,5 +258,5 @@ export const MENU_ITEMS: NbMenuItem[] = [
         link: '/auth/reset-password',
       },
     ],
-  },
-];
+  },*/
+]

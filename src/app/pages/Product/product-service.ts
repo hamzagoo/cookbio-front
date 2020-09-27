@@ -1,46 +1,45 @@
 import { Injectable } from "@angular/core";
 import { HttpClient, HttpHeaders } from "@angular/common/http";
 import { Observable } from "rxjs";
-import { Activitee } from "./activitee";
+import { Product } from "./product";
 
 
 @Injectable({
     providedIn: 'root'
   })
-  export class ActiviteeService {
+  export class ProductService {
     private baseUrl: string;
   
     constructor(
       private http: HttpClient
     ) {
       this.baseUrl = "http://192.168.1.7:8087/gta/V1/activitee";
-      //this.baseUrl = "http://192.168.1.44:8087/gta/V1/activitee";
     }
 
-    getAllActivitee():Observable<Activitee[]>{
-        return this.http.get<Activitee[]>(this.baseUrl+"/activitees");
+    getAllActivitee():Observable<Product[]>{
+        return this.http.get<Product[]>(this.baseUrl+"/activitees");
     }
 
-    getAllActiviteeByCategorie(id: number):Observable<Activitee[]>{
-      return this.http.get<Activitee[]>(this.baseUrl+"/activitees/%7Bid%7D?id="+id);
+    getAllActiviteeByCategorie(id: number):Observable<Product[]>{
+      return this.http.get<Product[]>(this.baseUrl+"/activitees/%7Bid%7D?id="+id);
   }
     deleteActivitee(id: number):Observable<void>{
       return this.http.delete<any>(this.baseUrl+"/%7Bid%7D?id="+id);
     }
 
-    addActivitee(activitee: Activitee):Observable<Activitee>{
+    addActivitee(activitee: Product):Observable<Product>{
       return this.http.post(this.baseUrl, activitee,{
         headers: new HttpHeaders({
             'Content-type' : 'application/json'
         })
       });
     }
-    public getById(id: string): Observable<Activitee> {
+    public getById(id: string): Observable<Product> {
       return this.http.get<any>(this.baseUrl + "/%7Bid%7D?id=" + id, {
         headers: new HttpHeaders({ 'Content-type': 'application/json' })
       });
     }
-    updateActivitee(id: number,activitee:Activitee):Observable<Activitee>{
+    updateActivitee(id: number,activitee:Product):Observable<Product>{
       return this.http.put(this.baseUrl+"/%7Bid%7D?id="+id, activitee,{
           headers: new HttpHeaders({
               'Content-type' : 'application/json'
