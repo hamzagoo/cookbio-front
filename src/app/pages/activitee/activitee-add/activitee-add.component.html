@@ -1,0 +1,76 @@
+<nb-card>
+    <nb-card-header style="text-align: left;">
+      <h2 class="ui header">Gestion des Activitée </h2><br>
+      <h5 class="ui dividing header">Permet d'ajouter une activitee activitee</h5>
+    </nb-card-header>
+  </nb-card>
+    <nb-card class="row one column centered grid content">
+        <nb-card-body>
+            <div class="row show-grid">
+                <div class= "col-md-4">
+                    <mat-form-field>
+                      <mat-label>Nom de la societe</mat-label>
+                          <mat-select [ngModelOptions]="{standalone: true}" [(ngModel)]="societe"  (change)="onSelectSociete()" >
+                              <mat-option *ngFor="let societe of societes" [value]="societe" (click)="onSelectSociete()">
+                              {{societe.libelle}}>>>{{societe.raisonSociale}}
+                              </mat-option>   
+                          </mat-select>
+                      </mat-form-field>
+                </div>
+                <div class= "col-md-4" style="margin-top: 8px"> 
+                    <ng-multiselect-dropdown
+                      [placeholder]="'Collaborateurs'"
+                      [data]="dropdownList"
+                      [settings]="dropdownSettings"
+                      (onSelect)="onItemSelect($event)"
+                      (onSelectAll)="onSelectAll($event)"
+                     
+                      id="collaborateurProjets"
+                    >
+                    </ng-multiselect-dropdown>
+                </div>
+              </div>
+              <h1 class="font">Info</h1>
+              <hr class="hrstyle"> 
+              
+            <div class="row show-grid" style="margin-bottom: 10px">
+              <div class= "col-md-6 row show-grid" > 
+                <div class= "col-md-2"><label for="type">Type : </label></div>
+                <div class= "col-md-4"><input type="text" id="type" [(ngModel)]="activitee.type" nbInput [ngModelOptions]="{standalone:true}" style="width: 300px"  placeholder="Type"></div>
+                </div>
+              <div class= "col-md-6 row show-grid" >
+                  <div class= "col-md-2"><label for="date" >Date : </label></div>
+                  <div class= "col-md-4"> <input type="date" id="date"  [(ngModel)]="activitee.date" nbInput [ngModelOptions]="{standalone:true}" style="width: 300px;"  placeholder="Date"></div>
+              </div>
+            </div> 
+
+            <div class="row show-grid">
+                <div class= "col-md-6 row show-grid" >
+                    <div class= "col-md-2"><label for="duree" >Durée : </label></div>
+                    <div class= "col-md-4"> <input type="text" id="duree" [(ngModel)]="activitee.duree" nbInput [ngModelOptions]="{standalone:true}"  style="width: 300px"  placeholder="Duree"></div>
+                  </div> 
+                <div class= "col-md-6 row show-grid " > 
+                    <div class= "col-md-2"><label for="IdCategorie">Catégorie : </label></div>
+                    <div class= "col-md-7"> 
+                      <ng-multiselect-dropdown
+                          [placeholder]="'Categories'"
+                          [data]="dropdownList2"
+                          [settings]="dropdownSettings2"
+                          (onSelect)="onItemSelect2($event)"
+                          id="activitees"
+                        >
+                        </ng-multiselect-dropdown>
+                      </div>
+               </div>
+            </div>   
+            <div class="sixteen wide column ui right aligned" style="margin: 0px; text-align: center">
+                <button mat-raised-button color="white" class="btn-blanc" (click)="gotoBack()">
+                    <mat-icon>keyboard_return</mat-icon> Annuler
+                </button>
+                <button mat-raised-button class="btn btn-primaire btnWithIcone" style="margin-left: 15px;"
+                [disabled]="isDisabled" (click)="add()">
+                    Enregistrer <mat-icon>send</mat-icon>
+                </button>
+            </div>
+        </nb-card-body>
+    </nb-card>
