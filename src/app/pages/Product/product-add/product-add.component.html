@@ -1,0 +1,44 @@
+
+<div class="centered-component card row justify-content-center" >
+    <div class="col-12 forms">
+        <form name="editForm" role="form" novalidate >
+            <h2 id="heading" class="titles" >Ajouter un produit</h2>
+
+            <div>
+
+                <div class="form-group" >
+                    <label for="Titre" >Titre</label>
+                    <input type="text" class="form-control" id="Titre" name="Titre" formControlName="Titre" />
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label"  for="Description">Description</label>
+                    <textarea type="text" class="form-control" name="Description" id="Description"
+                           formControlName="Description"></textarea>
+                </div>
+
+                <div class="form-group">
+                    <input type="file" class="form-control" name="image" id="image"
+                           formControlName="image"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label"  for="Prix">Prix</label>
+                    <input type="number" class="form-control" name="Prix" id="Prix"
+                           formControlName="Prix"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label"  for="Quantité">Quantité</label>
+                    <input type="number" class="form-control" name="Quantité" id="Quantité"
+                           formControlName="Quantité"/>
+                </div>
+                <div class="form-group">
+                    <button mat-raised-button color="primary" class="mat-focus-indicator mat-raised-button mat-button-base mat-primary"  >
+                        Save</button>
+                </div>
+                
+            </div>
+        </form>
+    </div>
+</div>

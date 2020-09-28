@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { NgModule, NO_ERRORS_SCHEMA } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ProductComponent } from './product.component';
 import { ProductListComponent } from './product-list/product-list.component';
@@ -7,6 +7,8 @@ import { ProductUpdateComponent } from './product-update/product-update.componen
 import { NbThemeModule } from '@nebular/theme';
 import { ProductRoutingModule } from './product-routing.module';
 import { ProductService } from './product-service';
+import { SharedModule } from 'app/shared/shared.module';
+import { ProductDetailComponent } from './product-detail/product-detail.component';
 
 @NgModule({
   declarations: [
@@ -14,15 +16,18 @@ import { ProductService } from './product-service';
     ProductListComponent,
     ProductAddComponent,
     ProductUpdateComponent,
+    ProductDetailComponent,
     ],
   imports: [
     CommonModule,
     NbThemeModule,
     ProductRoutingModule,
+    SharedModule
   ],
   providers: [
     ProductService,
   ],
+  schemas: [ NO_ERRORS_SCHEMA]
 })
 export class ProductModule { }
 

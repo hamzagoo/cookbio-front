@@ -1,4 +1,4 @@
-import { ModuleWithProviders, NgModule } from '@angular/core';
+import { CUSTOM_ELEMENTS_SCHEMA, ModuleWithProviders, NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import {
   NbActionsModule,
@@ -38,7 +38,17 @@ import { DEFAULT_THEME } from './styles/theme.default';
 import { COSMIC_THEME } from './styles/theme.cosmic';
 import { CORPORATE_THEME } from './styles/theme.corporate';
 import { DARK_THEME } from './styles/theme.dark';
+import { SharedModule } from 'app/shared/shared.module';
+import { MatButtonModule } from '@angular/material/button';
+import { MatIconModule } from '@angular/material/icon';
+import { MatCardModule } from '@angular/material/card';
 
+const MATERIAL = [
+
+  MatCardModule,
+  MatIconModule,
+  MatButtonModule
+]
 const NB_MODULES = [
   NbLayoutModule,
   NbMenuModule,
@@ -51,7 +61,8 @@ const NB_MODULES = [
   NbButtonModule,
   NbSelectModule,
   NbIconModule,
-  NbEvaIconsModule,
+  NbEvaIconsModule, 
+  SharedModule
 ];
 const COMPONENTS = [
   HeaderComponent,
@@ -71,9 +82,10 @@ const PIPES = [
 ];
 
 @NgModule({
-  imports: [CommonModule, ...NB_MODULES],
+  imports: [CommonModule, ...NB_MODULES, ...MATERIAL],
   exports: [CommonModule, ...PIPES, ...COMPONENTS],
   declarations: [...COMPONENTS, ...PIPES],
+  schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
 export class ThemeModule {
   static forRoot(): ModuleWithProviders<ThemeModule> {

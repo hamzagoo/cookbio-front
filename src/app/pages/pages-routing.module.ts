@@ -5,6 +5,8 @@ import { PagesComponent } from './pages.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { ECommerceComponent } from './e-commerce/e-commerce.component';
 import { NotFoundComponent } from './miscellaneous/not-found/not-found.component';
+import { AuthentificationPageComponent } from './auth/authentification-page.component';
+import { HomeComponent } from './home/home.component';
 
 const routes: Routes = [{
   path: '',
@@ -19,8 +21,15 @@ const routes: Routes = [{
   },{
     path: 'parametre-generaux/product',
     loadChildren: './product/product.module#ProductModule',
+  },
+  {
+    path: 'login',
+    component: AuthentificationPageComponent
+  },{
+    path: 'home',
+    component: HomeComponent,
   }
-
+  
   /* {
     path: 'modal-overlays',
     loadChildren: './modal-overlays/modal-overlays.module#ModalOverlaysModule',
@@ -48,14 +57,14 @@ const routes: Routes = [{
   }, {
     path: 'miscellaneous',
     loadChildren: './miscellaneous/miscellaneous.module#MiscellaneousModule',
-  }, {
+  },*/ ,{
     path: '',
-    redirectTo: 'dashboard',
-    pathMatch: 'full',
+    redirectTo: 'home',
+    pathMatch: 'full'
   }, {
     path: '**',
     component: NotFoundComponent,
-  }*/],
+  }],
 }];
 
 @NgModule({
