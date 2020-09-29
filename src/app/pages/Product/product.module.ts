@@ -9,6 +9,7 @@ import { ProductRoutingModule } from './product-routing.module';
 import { ProductService } from './product-service';
 import { SharedModule } from 'app/shared/shared.module';
 import { ProductDetailComponent } from './product-detail/product-detail.component';
+import { MatIconModule } from '@angular/material/icon';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { ProductDetailComponent } from './product-detail/product-detail.componen
     CommonModule,
     NbThemeModule,
     ProductRoutingModule,
-    SharedModule
+    SharedModule,
+    MatIconModule
   ],
   providers: [
     ProductService,

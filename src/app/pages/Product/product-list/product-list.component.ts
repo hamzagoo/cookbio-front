@@ -14,42 +14,46 @@ export class ProductListComponent implements OnInit {
     {
       title : 'produit 1',
       description: 'Produit 1',
-      price: 21
+      price: 21,
+      image: "../../../assets/images/p1.jpg"
     },{
       title : 'produit 2',
       description: 'Produit 2',
-      price: 22
+      price: 22,
+      image: "../../../assets/images/p2.jpg"
     },{
-      title : 'produit 2',
-      description: 'Produit 2',
-      price: 23
+      title : 'produit 3',
+      description: 'Produit 3',
+      price: 23,
+      image: "../../../assets/images/p3.jpg"
     },
     {
-      title : 'produit 1',
-      description: 'Produit 1',
-      price: 21
+      title : 'produit 4',
+      description: 'Produit 4',
+      price: 21,
+      image: "../../../assets/images/p4.jpg"
     },{
-      title : 'produit 2',
-      description: 'Produit 2',
-      price: 22
+      title : 'produit 5',
+      description: 'Produit 5',
+      price: 22,
+      image: "../../../assets/images/p5.jpg"
     },{
-      title : 'produit 2',
-      description: 'Produit 2',
-      price: 23
+      title : 'produit 6',
+      description: 'Produit 6',
+      price: 23,
+      image: "../../../assets/images/p6.jpg"
     },
     {
-      title : 'produit 1',
-      description: 'Produit 1',
-      price: 21
+      title : 'produit 7',
+      description: 'Produit 7',
+      price: 21,
+      image: "../../../assets/images/p7.jpg"
     },{
-      title : 'produit 2',
-      description: 'Produit 2',
-      price: 22
-    },{
-      title : 'produit 2',
-      description: 'Produit 2',
-      price: 23
-    },
+      title : 'produit 8',
+      description: 'Produit 8',
+      price: 22,
+      image: "../../../assets/images/p8.jpg"
+    }
   ]
   cartButton = {
     buttonLabel : "Add to cart",
@@ -65,9 +69,13 @@ export class ProductListComponent implements OnInit {
    }
 
    redirectToAddProduct(){
-      this.router.navigate(['./pages/parametre-generaux/product/add'])
+      this.router.navigate(['./pages/home/parametre-generaux/product/add'])
    }
    redirectToDetailProduct(event){
       this.router.navigate(['./pages/parametre-generaux/product/' + event?.id])
    }
+
+   redirectToHome(){
+    this.router.navigate(['./pages/home'])
+ }
 }

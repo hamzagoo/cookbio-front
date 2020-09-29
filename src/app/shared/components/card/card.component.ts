@@ -9,7 +9,7 @@ import { Product } from 'app/pages/Product/product';
 export class CardComponent implements OnInit {
 
   @Input()
-  cardObject: any;
+  cardObject: Product;
 
   @Input()
   button? = {

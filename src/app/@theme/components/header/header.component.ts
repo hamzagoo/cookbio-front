@@ -60,4 +60,9 @@ export class HeaderComponent implements OnInit {
 
     this.route.navigate(["./auth/login"]);
   }
+
+  redirectToList(){
+    console.log('techek');
+    this.route.navigate(["./pages/home/parametre-generaux/product/list"]);
+  }
 }

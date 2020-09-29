@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Product } from '../Product/product';
 
 @Component({
   selector: 'ngx-home',
@@ -11,10 +12,53 @@ export class HomeComponent implements OnInit {
     "../../../../assets/images/slides/slide.jpeg",
     "../../../../assets/images/slides/slide2.jpg"
   ]
-  
+
+  products: Product[] = [
+    {
+      title : 'produit 1',
+      description: 'Produit 1',
+      price: 21,
+      image: "../../../assets/images/p1.jpg"
+    },{
+      title : 'produit 2',
+      description: 'Produit 2',
+      price: 22,
+      image: "../../../assets/images/p2.jpg"
+    },{
+      title : 'produit 3',
+      description: 'Produit 3',
+      price: 23,
+      image: "../../../assets/images/p3.jpg"
+    },
+    {
+      title : 'produit 4',
+      description: 'Produit 4',
+      price: 21,
+      image: "../../../assets/images/p4.jpg"
+    }
+  ]
   constructor() { }
 
   ngOnInit(): void {
+    this.showSlides()
   }
 
+
+   showSlides(): void {
+    var i: any;
+    var slideIndex = 0;
+    var slides = document.getElementsByClassName("mySlides"); 
+    var dots = document.getElementsByClassName("dot");
+    for (i = 0; i < slides.length; i++) {
+      slides[i]['style']['display'] = "none";  
+    }
+    slideIndex++;
+    if (slideIndex > slides.length) {slideIndex = 1}    
+    for (i = 0; i < dots.length; i++) {
+      dots[i].className = dots[i].className.replace(" active", "");
+    }
+    slides[slideIndex-1]['style']['display'] = "block";  
+    dots[slideIndex-1].className += " active";
+    setTimeout(this.showSlides, 2000); // Change image every 2 seconds
+  }
 }

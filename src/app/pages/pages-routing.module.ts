@@ -19,7 +19,7 @@ const routes: Routes = [{
     loadChildren: './dashboard/dashboard.module#DashboardModule',
     component: DashboardComponent,
   },{
-    path: 'parametre-generaux/product',
+    path: 'home/parametre-generaux/product',
     loadChildren: './product/product.module#ProductModule',
   },
   {

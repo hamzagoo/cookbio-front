@@ -1,8 +1,17 @@
 
-<div style="width: 100%;">
-    <button mat-raised-button color="primary" class="mat-focus-indicator mat-raised-button mat-button-base mat-primary" (click)="redirectToAddProduct()"
+<div class="col-12" >
+    <div class="col-12">
+        <button mat-raised-button color="primary" class="mat-focus-indicator mat-raised-button mat-button-base mat-primary" (click)="redirectToHome()"
+        style="float: left;line-height: initial;" >
+        <mat-icon aria-label="Acceuils" style="line-height: 1 !important;" >keyboard_backspace</mat-icon> 
+    </button>
+      
+    </div>
+    <div class="col-12">
+        <button mat-raised-button color="primary" class="mat-focus-indicator mat-raised-button mat-button-base mat-primary" (click)="redirectToAddProduct()"
         style="margin-right: 20px;float: right;" >
         Ajouter produit</button>
+    </div>
 </div>
 <div class="row" style="display: inline-flex;
     margin-top: 10px;">
