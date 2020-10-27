@@ -1,0 +1,4 @@
+
+<div *ngFor="let product of products">
+    <app-card [cardObject]="product" (action)="addToPanier()"></app-card>
+</div>

@@ -12,49 +12,34 @@ import { Product } from "./product";
   
     constructor(
       private http: HttpClient
-    ) {
-      this.baseUrl = "http://192.168.1.7:8087/gta/V1/activitee";
+    ) {  }
+
+    getAllProducts():Observable<Product[]>{
+        return this.http.get<Product[]>(productUrl);
     }
 
-    getAllActivitee():Observable<Product[]>{
-        return this.http.get<Product[]>(this.baseUrl+"/activitees");
-    }
-
-    getAllActiviteeByCategorie(id: number):Observable<Product[]>{
-      return this.http.get<Product[]>(this.baseUrl+"/activitees/%7Bid%7D?id="+id);
+    getProductById(id: number):Observable<Product>{
+    
+      return this.http.get<Product>(productUrl+'/'+id);
   }
-    deleteActivitee(id: number):Observable<void>{
-      return this.http.delete<any>(this.baseUrl+"/%7Bid%7D?id="+id);
+    deleteProduct(id: number):Observable<void>{
+      return this.http.delete<any>(productUrl + '/' +id);
     }
 
-    addActivitee(activitee: Product):Observable<Product>{
-      return this.http.post(this.baseUrl, activitee,{
+    addProduct(product: Product):Observable<Product>{
+      return this.http.post(productUrl, product,{
         headers: new HttpHeaders({
             'Content-type' : 'application/json'
         })
       });
     }
-    public getById(id: string): Observable<Product> {
-      return this.http.get<any>(this.baseUrl + "/%7Bid%7D?id=" + id, {
-        headers: new HttpHeaders({ 'Content-type': 'application/json' })
-      });
-    }
-    updateActivitee(id: number,activitee:Product):Observable<Product>{
-      return this.http.put(this.baseUrl+"/%7Bid%7D?id="+id, activitee,{
+
+    updateProduct(id: number,product:Product):Observable<Product>{
+      return this.http.put(productUrl + '/' + id, product,{
           headers: new HttpHeaders({
               'Content-type' : 'application/json'
           })
       })
   }
-
-  getNiceLastUpdatedTime(lastUpdated: Date): String {
-
-    let options: Intl.DateTimeFormatOptions = {
-        day: "numeric", month: "numeric", year: "numeric",
-        hour: "2-digit", minute: "2-digit"
-    };
-
-    return lastUpdated.toLocaleDateString("en-GB", options) + " " + lastUpdated.toLocaleTimeString("en-GB", options);
-}
     
   }
