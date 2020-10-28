@@ -21,6 +21,7 @@ import {
   NbWindowModule,
 } from '@nebular/theme';
 import { FormsModule } from '@angular/forms';
+import { SharedModule } from './shared/shared.module';
 
 @NgModule({
   declarations: [AppComponent],
@@ -39,6 +40,8 @@ import { FormsModule } from '@angular/forms';
     }),
     CoreModule.forRoot(),
     ThemeModule.forRoot(),
+    SharedModule,
+    
   ],
   bootstrap: [AppComponent],
   schemas: [CUSTOM_ELEMENTS_SCHEMA]

@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <mat-card class="example-card" style="width: 100%; height: 100%;">
   <div (click)="cardDetailOnClick()" style="cursor: pointer;">
       <mat-card-header>
@@ -21,3 +22,20 @@
 
 
 
+=======
+<mat-card class="example-card">
+    <mat-card-header>
+      <div mat-card-avatar class="example-header-image"></div>
+      <mat-card-title>{{cardObject?.title}}</mat-card-title>
+    </mat-card-header>
+    <img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu">
+    <mat-card-content>
+      <p>
+        {{cardObject?.description}}
+      </p>
+    </mat-card-content>
+    <mat-card-actions>
+      <button mat-button (click)="actionOnClick()" >{{button?.buttonLabel}}</button>
+    </mat-card-actions>
+  </mat-card>
+>>>>>>> 1d4abffb6a3fc3a2370002fc497ff7e8ce012dab
