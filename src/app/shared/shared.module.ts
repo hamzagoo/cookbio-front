@@ -1,16 +1,20 @@
-import { CUSTOM_ELEMENTS_SCHEMA, NgModule } from '@angular/core';
+import { CUSTOM_ELEMENTS_SCHEMA, NgModule, NO_ERRORS_SCHEMA } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { CardComponent } from './components/card/card.component';
-import { MaterialModule } from 'app/material/material.module';
-
-
+import { MatCardModule } from '@angular/material/card';
+import {MatIconModule} from '@angular/material/icon';
+import {MatButtonModule} from '@angular/material/button';
+import { SlideComponent } from './components/slide/slide.component';
 
 @NgModule({
-  declarations: [CardComponent],
+  declarations: [CardComponent, SlideComponent],
   imports: [
-    CommonModule
+    CommonModule,
+    MatCardModule,
+    MatIconModule,
+    MatButtonModule,
   ],
-  exports: [MaterialModule],
-  schemas: [ CUSTOM_ELEMENTS_SCHEMA ]
+  exports: [ MatCardModule , CardComponent, SlideComponent],
+  schemas: [ NO_ERRORS_SCHEMA ]
 })
 export class SharedModule { }

@@ -2,14 +2,7 @@ import { NbMenuItem } from '@nebular/theme';
 
 export const MENU_ITEMS: NbMenuItem[] = [
 
-  {
-    title: 'IoT Dashboard',
-    icon: 'nb-home',
-    link: '/pages/iot-dashboard/chartProjet',
-    home: true,
-    
-  },
-  {
+  /*{
     title: 'Parametres Généraux',
     icon: 'nb-gear',
     children: [
@@ -19,6 +12,11 @@ export const MENU_ITEMS: NbMenuItem[] = [
       }
     ]
   },
+  */
+ {
+  title: 'Products',
+  link: '/pages/parametre-generaux/product/list'
+},
   
   /*{
     title: 'Extra Components',

@@ -1,0 +1,69 @@
+<div class="ui container" style="padding-top:10%">
+  <div class="ui grid center aligned">
+    <div class="row">
+      <div class="sixteen wide tablet six wide computer column">
+        <div class="ui left aligned segment">
+
+          <form #form="ngForm"  novalidate class="ui form">
+            <div class="field">
+              <img src="../../../assets/images/logo.PNG" width="300" height="75" alt="InFront" class="ui centered image">
+            </div>
+            <div class="content">
+
+            </div>
+            <div class="field">
+              <label>
+                Email or Username:
+              </label>
+              <div class="ui fluid icon input">
+                <input id="login" type="text" class="form-control validate"
+                  name="login"  required [minLength]="3" maxlength="40"
+                  placeholder="Login ou Email ou Téléphone" /><i class="icon mail outline"></i>
+              </div>
+              <div  style="margin-bottom: 2px;">
+                <div class="ui pointing red basic label" 
+                  style="height: 30px; padding-top: 5px;">
+                  Login, Email ou Téléphone requis.
+                </div>
+              </div>
+            </div>
+            <div class="field">
+              <label>
+                Password:
+              </label>
+              <div class="ui fluid icon input">
+                <input id="password" type="password" class="form-control validate"
+                  name="password"  required [minLength]="5" maxlength="40"
+                  placeholder="Mot de passe" /><i class="icon key"></i>
+              </div>
+              <div >
+                <div class="ui pointing red basic label" 
+                  style="height: 30px; padding-top: 5px;">
+                  Mot de passe requis.
+                </div>
+              </div>
+            </div>
+            <div class="field">
+              <div class="field">
+                <button class="ui teal right labeled icon button fluid" 
+                  [disabled]="form.invalid">
+                  Login
+                  <i class="icon sign in"></i>
+                </button>
+              </div>
+              <div class="field">
+                <a class="ui blue right labeled icon button fluid" routerLink="'/contact'">
+                  Sign Up
+                  <i class="icon spy"></i>
+                </a>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+

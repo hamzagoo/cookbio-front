@@ -1,0 +1,10 @@
+
+
+<div class="card shadow-style">
+    <div class="col-12">
+        <h3 class="titles"> votre panier </h3>
+    </div>
+     
+    <ng2-smart-table [settings]="settings" [source]="data" (deleteConfirm)="onDeleteConfirm($event)">
+    </ng2-smart-table> 
+</div>

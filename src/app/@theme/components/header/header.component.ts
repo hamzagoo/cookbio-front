@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 import { NbMenuService, NbSidebarService } from '@nebular/theme';
 import { AnalyticsService } from '../../../@core/utils';
@@ -19,6 +20,7 @@ export class HeaderComponent implements OnInit {
               private menuService: NbMenuService,
               private analyticsService: AnalyticsService,
               private layoutService: LayoutService,
+              private route: Router
               ) {
   }
 
@@ -52,5 +54,19 @@ export class HeaderComponent implements OnInit {
   navigateHome() {
     this.menuService.navigateHome();
     return false;
+  }
+
+  goToLogin(){
+
+    this.route.navigate(["./auth/login"]);
+  }
+
+  redirectToList(){
+    console.log('techek');
+    this.route.navigate(["./pages/home/parametre-generaux/product/list"]);
+  }
+
+  goToPanier(){
+    this.route.navigate(["./pages/panier"]);
   }
 }

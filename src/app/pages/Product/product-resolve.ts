@@ -16,7 +16,7 @@ export class ResolveProductService implements Resolve<Product> {
             ) {}
 
     resolve(route: ActivatedRouteSnapshot): Observable<Product> {
-        return this.productService.getProductById(this.route.paramMap['id']);
+       return null// this.productService.getById(route.paramMap.get('id'));
     }
 
 }
