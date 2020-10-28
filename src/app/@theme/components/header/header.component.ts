@@ -65,4 +65,8 @@ export class HeaderComponent implements OnInit {
     console.log('techek');
     this.route.navigate(["./pages/home/parametre-generaux/product/list"]);
   }
+
+  goToPanier(){
+    this.route.navigate(["./pages/panier"]);
+  }
 }

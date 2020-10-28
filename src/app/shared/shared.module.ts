@@ -12,7 +12,7 @@ import { SlideComponent } from './components/slide/slide.component';
     CommonModule,
     MatCardModule,
     MatIconModule,
-    MatButtonModule
+    MatButtonModule,
   ],
   exports: [ MatCardModule , CardComponent, SlideComponent],
   schemas: [ NO_ERRORS_SCHEMA ]

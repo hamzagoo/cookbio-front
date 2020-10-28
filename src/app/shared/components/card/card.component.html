@@ -2,7 +2,7 @@
   <div (click)="cardDetailOnClick()" style="cursor: pointer;">
       <mat-card-header>
         <div mat-card-avatar class="example-header-image"></div>
-        <mat-card-title>{{cardObject?.title}}</mat-card-title>
+        <mat-card-title class="titles">{{cardObject?.title}}</mat-card-title>
       </mat-card-header>
       <img mat-card-image src="{{cardObject?.image}}" alt="Photo of a Shiba Inu">
       <mat-card-content>

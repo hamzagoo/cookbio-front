@@ -20,13 +20,13 @@ import {
   NbToastrModule,
   NbWindowModule,
 } from '@nebular/theme';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [AppComponent],
-  imports: [
-    BrowserModule,
+  imports: [ 
     BrowserAnimationsModule,
-    HttpClientModule,
+    HttpClientModule, 
     AppRoutingModule,
     NbSidebarModule.forRoot(),
     NbMenuModule.forRoot(),

@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core'; 
+import { Product } from '../product';
+import { ProductService } from '../product-service';
 
 
 @Component({
@@ -7,12 +9,33 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./product-add.component.scss'],
 })
 export class ProductAddComponent implements OnInit {
+  selectedFile: File;
+  public product: Product = new Product(); 
+  imageUrl: any;
 
-  constructor() {}
+  constructor(private productService : ProductService) {
 
+  }
 
-  ngOnInit() {
+  onFileChanged(event) {
+    this.selectedFile = event.target.files[0];
+    let reader = new FileReader();
+    reader.onload = (event: any) => {
+      this.imageUrl = event.target.result;
+    };
+    reader.readAsDataURL(this.selectedFile);
+  }
 
+  save(){ 
+    this.productService.addProduct(this.product).subscribe(
+      (data:Product) =>{
+        console.log(data);
+      },
+      (error: any) => { console.log(error); }
+    )
+  }
+
+  ngOnInit() { 
   }
 
 }

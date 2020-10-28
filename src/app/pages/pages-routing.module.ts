@@ -7,6 +7,7 @@ import { ECommerceComponent } from './e-commerce/e-commerce.component';
 import { NotFoundComponent } from './miscellaneous/not-found/not-found.component';
 import { AuthentificationPageComponent } from './auth/authentification-page.component';
 import { HomeComponent } from './home/home.component';
+import { PanierComponent } from './panier/panier.component';
 
 const routes: Routes = [{
   path: '',
@@ -28,6 +29,9 @@ const routes: Routes = [{
   },{
     path: 'home',
     component: HomeComponent,
+  } ,{
+    path: 'panier',
+    component: PanierComponent,
   }
   
   /* {

@@ -8,6 +8,7 @@ import { Role } from './@core/models/role';
 import { User } from './@core/models/user';
 import { AnalyticsService } from './@core/utils/analytics.service';
 import { SeoService } from './@core/utils/seo.service';
+import { Product } from './pages/Product/product';
 
 @Component({
   selector: 'ngx-app',
@@ -26,14 +27,11 @@ export class AppComponent implements OnInit {
       role: Role.MANAGER,
       username: "hamza.mountacer"
     }
+    let productsOfCart: Product[] = [];
 
     localStorage.setItem("currentUser", JSON.stringify(user));
-
-    /*
-    var userInStore = localStorage.getItem("currentUser");
-    var currentUser = JSON.parse(userInStore);
-    */
-
+    localStorage.setItem("productsOfCart", JSON.stringify(productsOfCart));
+ 
     this.analytics.trackPageViews();
     this.seoService.trackCanonicalChanges();
   }

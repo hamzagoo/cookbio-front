@@ -1,0 +1,1 @@
+const BASE_URL_PRODUCT= 'http://localhost:8080/product'

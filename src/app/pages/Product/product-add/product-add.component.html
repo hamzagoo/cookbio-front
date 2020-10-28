@@ -1,44 +1,40 @@
 
 <div class="centered-component card row justify-content-center" >
     <div class="col-12 forms">
-        <form name="editForm" role="form" novalidate >
-            <h2 id="heading" class="titles" >Ajouter un produit</h2>
-
-            <div>
-
-                <div class="form-group" >
-                    <label for="Titre" >Titre</label>
-                    <input type="text" class="form-control" id="Titre" name="Titre" formControlName="Titre" />
-                </div>
-
-                <div class="form-group">
-                    <label class="form-control-label"  for="Description">Description</label>
-                    <textarea type="text" class="form-control" name="Description" id="Description"
-                           formControlName="Description"></textarea>
-                </div>
-
-                <div class="form-group">
-                    <input type="file" class="form-control" name="image" id="image"
-                           formControlName="image"/>
-                </div>
-
-                <div class="form-group">
-                    <label class="form-control-label"  for="Prix">Prix</label>
-                    <input type="number" class="form-control" name="Prix" id="Prix"
-                           formControlName="Prix"/>
-                </div>
-
-                <div class="form-group">
-                    <label class="form-control-label"  for="Quantité">Quantité</label>
-                    <input type="number" class="form-control" name="Quantité" id="Quantité"
-                           formControlName="Quantité"/>
-                </div>
-                <div class="form-group">
-                    <button mat-raised-button color="primary" class="mat-focus-indicator mat-raised-button mat-button-base mat-primary"  >
-                        Save</button>
-                </div>
+      <form #form="ngForm">  
+            <h2 id="heading" class="titles" >Ajouter un produit</h2> 
+                  <div class="form-group " >
+                    <label for="title">Titre</label>
+                    <input type="text" class="form-control"
+                      id="title" name="title" [(ngModel)]="product.title" >
+                  </div>
+                  <div class="form-group ">
+                    <label for="description">Description</label>
+                    <textarea type="text"  id="description" name="description" 
+                      class="form-control" [(ngModel)]="product.description"  ></textarea>
+                  </div>
                 
-            </div>
-        </form>
-    </div>
+                    <div class="form-group " >
+                      <label for="image">Image</label>
+                      <input type="file"  id="image" name="image"  [(ngModel)]="product.image" class="form-control" (change)="onFileChanged($event)" #fileInput >
+                    </div>
+                    <div class="form-group " >
+                      <img src="{{imageUrl}}" width="60" height="50">
+                    </div>
+                    <div lass="form-group " >
+                      <label for="price">Prix</label>
+                      <input type="number"  id="price" name="price" 
+                        class="form-control"  [(ngModel)]="product.price"  >
+                      </div>
+                      <div lass="form-group " >
+                        <label for="quantite">Quantité</label>
+                        <input type="number"  id="quantite" name="quantite" 
+                          class="form-control" [(ngModel)]="product.quantity"  >
+                        </div>
+                      <br>
+                      <button mat-raised-button color="primary" class="mat-focus-indicator mat-raised-button mat-button-base mat-primary" (click)= "save()" >
+                        Save
+                      </button> 
+            </form>
+        </div>
 </div>

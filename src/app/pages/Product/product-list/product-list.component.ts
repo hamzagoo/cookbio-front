@@ -66,6 +66,10 @@ export class ProductListComponent implements OnInit {
 
    addToCart(event){
     console.log(event)
+
+    var productsOfCart =  JSON.parse(localStorage.getItem("productsOfCart"));
+    productsOfCart.push(event);
+    localStorage.setItem("productsOfCart", JSON.stringify(productsOfCart));
    }
 
    redirectToAddProduct(){

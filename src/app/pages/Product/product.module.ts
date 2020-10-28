@@ -10,6 +10,8 @@ import { ProductService } from './product-service';
 import { SharedModule } from 'app/shared/shared.module';
 import { ProductDetailComponent } from './product-detail/product-detail.component';
 import { MatIconModule } from '@angular/material/icon';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { BrowserModule } from '@angular/platform-browser';
 
 @NgModule({
   declarations: [
@@ -24,7 +26,9 @@ import { MatIconModule } from '@angular/material/icon';
     NbThemeModule,
     ProductRoutingModule,
     SharedModule,
-    MatIconModule
+    MatIconModule,
+    ReactiveFormsModule,
+    FormsModule, 
   ],
   providers: [
     ProductService,
