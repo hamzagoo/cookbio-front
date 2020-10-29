@@ -11,7 +11,7 @@
 </div>
 <div class="row" style="display: inline-flex;
     margin-top: 10px;">
-    <div class="card col-3" *ngFor="let product of products" style=" margin: 0 0 10px 10px; padding: 0;" >
+    <div class="card col-3" *ngFor="let product of products" style=" margin: 0 0 10px 10px; padding: 0;  border-top-left-radius: 12%;" >
         <ngx-card  [cardObject]="product" [button]="cartButton" (action)="addToCart($event)" (cardDetail)="redirectToDetailProduct($event)" ></ngx-card>
     </div>
 </div>

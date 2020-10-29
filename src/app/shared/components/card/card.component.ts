@@ -31,6 +31,7 @@ export class CardComponent implements OnInit {
 
   actionOnClick(){
     this.action.emit(this.cardObject);
+    
   }
   cardDetailOnClick(){
     console.log("cardDetailOnClick")
