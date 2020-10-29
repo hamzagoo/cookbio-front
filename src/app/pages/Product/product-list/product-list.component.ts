@@ -76,6 +76,7 @@ export class ProductListComponent implements OnInit {
       this.router.navigate(['./pages/home/parametre-generaux/product/add'])
    }
    redirectToDetailProduct(event){
+     console.log(event)
       this.router.navigate(['./pages/parametre-generaux/product/' + event?.id])
    }
 
