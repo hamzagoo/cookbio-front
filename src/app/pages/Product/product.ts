@@ -6,5 +6,6 @@ export class Product {
     price?: number;
     image?: string;
     quantity?: number;
+    time?:number
 }
 

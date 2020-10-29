@@ -1,13 +1,17 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'ngx-footer',
   styleUrls: ['./footer.component.scss'],
-  template: `
-    <span class="created-by">
-      Created by <b>Cook&bio Inc.</b> 2020
-    </span> 
-  `,
+  templateUrl: './footer.component.html',
 })
 export class FooterComponent {
+
+  constructor(private router: Router){
+
+  }
+  redirectToListProduit(){
+    this.router.navigate(["./pages/home/parametre-generaux/product/list"]);
+  }
 }

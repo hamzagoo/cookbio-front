@@ -13,46 +13,54 @@ export class ProductListComponent implements OnInit {
   products: Product[] = [
     {
       title : 'produit 1',
-      description: 'Produit 1',
+      description: 'produit 1',
       price: 21,
-      image: "../../../assets/images/p1.jpg"
+      image: "../../../assets/images/p1.jpg",
+      time:30
     },{
       title : 'produit 2',
       description: 'Produit 2',
       price: 22,
-      image: "../../../assets/images/p2.jpg"
+      image: "../../../assets/images/p2.jpg",
+      time: 10
     },{
       title : 'produit 3',
       description: 'Produit 3',
       price: 23,
-      image: "../../../assets/images/p3.jpg"
+      image: "../../../assets/images/p3.jpg",
+      time: 5
     },
     {
       title : 'produit 4',
       description: 'Produit 4',
       price: 21,
-      image: "../../../assets/images/p4.jpg"
+      image: "../../../assets/images/p4.jpg",
+      time: 14
     },{
       title : 'produit 5',
       description: 'Produit 5',
       price: 22,
-      image: "../../../assets/images/p5.jpg"
+      image: "../../../assets/images/p5.jpg",
+      time: 12
     },{
       title : 'produit 6',
       description: 'Produit 6',
       price: 23,
-      image: "../../../assets/images/p6.jpg"
+      image: "../../../assets/images/p6.jpg",
+      time: 10
     },
     {
       title : 'produit 7',
       description: 'Produit 7',
       price: 21,
-      image: "../../../assets/images/p7.jpg"
+      image: "../../../assets/images/p7.jpg",
+      time: 17
     },{
       title : 'produit 8',
       description: 'Produit 8',
       price: 22,
-      image: "../../../assets/images/p8.jpg"
+      image: "../../../assets/images/p8.jpg",
+      time: 20
     }
   ]
   cartButton = {

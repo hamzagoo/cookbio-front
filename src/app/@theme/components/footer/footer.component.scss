@@ -27,4 +27,23 @@
       font-size: 1.5rem;
     }
   }
+
+  .inputCss{
+    padding: 12px;
+    border: 1px solid #E2E2E2;
+  }
+
+  .buttonCss{
+    padding: 12px;
+    border-top-right-radius: 13px;
+    border-bottom-right-radius: 13px;
+    background-color: #FDC52A;
+    border: 1px solid #FDC52A;
+    cursor: pointer;
+    -webkit-transition: 1s;
+    -o-transition: 1s;
+    transition: 1s;
+    bottom: 35px;
+    right: 0;
+  }
 }
