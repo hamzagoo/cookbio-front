@@ -1,1 +1,26 @@
-<p>product-detail works!</p>
+
+
+<div class="centered-component card row justify-content-center" >
+   <div class="row col-10">
+       <div class="col-5" style=" padding-left: 0px;   padding-right: 0px;">
+        <img  src="{{product?.image}}" width="400" height="500" alt="Photo of a Shiba Inu" >
+       </div>
+       <div class="col-7" style=" float: right;width: 48%; clear: none;">
+            <h2 class="title">
+                {{product?.title}}
+            </h2>
+            <p>
+                <span  style="color: #673ab7; text-underline-position: auto;text-decoration: underline; font-size: 1em; text-align: center; font-weight: bold; font-family: 'Quicksand', sans-serif;" data-wahfont="18">{{product?.price}} 
+                 <span style="color: #673ab7; font-size: 1em; text-align: center; text-underline-position: auto;text-decoration: underline;font-weight: bold; font-family: 'Quicksand', sans-serif;" data-wahfont="18">€</span></span>        
+            </p>
+            <div style="margin-top: 50px;">
+                <p data-wahfont="18">{{product?.description}}
+                </p>
+            </div>
+            <div class="row" style="margin-top: 30px;">
+                <input style="width: 3.631em; text-align: center; margin-right: 5px;" type="number" step="1" min="1" max=""  value="1" title="Qté" size="4" placeholder="" inputmode="numeric" >
+                <button  mat-raised-button color="primary" class="mat-focus-indicator mat-raised-button mat-button-base mat-primary" style="background: #673ab7;">Ajouter au panier</button>
+            </div>
+       </div>
+   </div>
+</div>

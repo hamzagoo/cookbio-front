@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
+import { Observable } from 'rxjs';
+import { map } from 'rxjs/operators';
 import { Product } from '../product';
+import { ProductService } from '../product-service';
 
 @Component({
   selector: 'ngx-product-detail',
@@ -9,13 +12,24 @@ import { Product } from '../product';
 })
 export class ProductDetailComponent implements OnInit {
 
-  product: Product;
+  id$: Observable<string>;
+  id: number;
+  product : Product;
 
-  constructor(private route: ActivatedRoute) { }
+  constructor(private route: ActivatedRoute, private productService : ProductService) { }
 
   ngOnInit(): void {
-    
-    this.product = this.route.snapshot.data['product'];
+    this.id$ =  this.route.paramMap.pipe(map(paramMap => paramMap.get('id')));
+
+    this.id = +this.route.snapshot.paramMap.get('id') ;
+   this.productService.getbyId(this.id).subscribe(
+     res => {
+       this.product = res;
+     },
+     err => {
+       console.log('error');
+     }
+   )
   }
 
 }

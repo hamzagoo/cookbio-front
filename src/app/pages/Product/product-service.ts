@@ -36,4 +36,8 @@ import { FormBuilder,Validators } from '@angular/forms';
     updateProduct(product:Product):Observable<Product>{
       return this.http.put<Product>(this.baseUrl, { params: {product: product}, observe: 'response' });
     } 
+
+    getbyId(id: number):Observable<Product>{
+        return this.http.get<Product>(`${this.baseUrl}/${id}`)
+    }
  }
