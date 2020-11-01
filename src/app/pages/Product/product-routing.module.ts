@@ -21,11 +21,8 @@ const routes: Routes = [{
   component: ProductAddComponent
   },
   {
-    path: '/:id',
+    path: ':id',
     component: ProductDetailComponent,
-    resolve : {
-      product: ResolveProductService
-    }
   },
   {
     path: 'update/:id',

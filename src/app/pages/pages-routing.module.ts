@@ -12,16 +12,12 @@ import { PanierComponent } from './panier/panier.component';
 const routes: Routes = [{
   path: '',
   component: PagesComponent,
-  children: [/*{
-    path: 'dashboard',
-    component: ECommerceComponent,
-  },*/ {
-    path: 'iot-dashboard',
-    loadChildren: './dashboard/dashboard.module#DashboardModule',
-    component: DashboardComponent,
-  },{
+  children: [ {
     path: 'home/parametre-generaux/product',
     loadChildren: './product/product.module#ProductModule',
+  },{
+    path: 'events',
+    loadChildren: './editors/editors.module#EditorsModule',
   },
   {
     path: 'login',

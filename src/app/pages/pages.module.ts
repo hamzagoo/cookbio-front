@@ -16,6 +16,7 @@ import { HomeModule } from './home/home.module';
 import { PanierComponent } from './panier/panier.component';
 import { Ng2SmartTableModule } from 'ng2-smart-table';
 
+
 @NgModule({
   imports: [
     PagesRoutingModule,
@@ -44,7 +45,7 @@ import { Ng2SmartTableModule } from 'ng2-smart-table';
   declarations: [
     PagesComponent,
     AuthentificationPageComponent,
-    PanierComponent
+    PanierComponent,
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA , NO_ERRORS_SCHEMA]
 })

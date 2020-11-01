@@ -1,8 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { NbToastrService, NbSpinnerService } from '@nebular/theme';
-import { NgForm } from '@angular/forms';
-import { HttpErrorResponse } from '@angular/common/http';
 /*import { Credentials } from '../pages/authentification/models/credentials';
 import { Utilisateur } from '../pages/authentification/models/utilisateur';
 import { AuthentificationService } from '../pages/authentification/services/authentification.service';
@@ -12,7 +10,7 @@ import { AuthentificationService } from '../pages/authentification/services/auth
   templateUrl: './authentification-page.component.html',
   styleUrls: ['./authentification-page.component.scss']
 })
-export class AuthentificationPageComponent implements OnInit {
+export class AuthentificationPageComponent  implements OnInit {
 
   invalidCredentialMsg: string;
   // model: any = {};

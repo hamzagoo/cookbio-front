@@ -1,4 +1,5 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { Router } from '@angular/router';
 import { Product } from 'app/pages/Product/product';
 
 @Component({
@@ -7,6 +8,7 @@ import { Product } from 'app/pages/Product/product';
   styleUrls: ['./card.component.scss']
 })
 export class CardComponent implements OnInit {
+
 
   @Input()
   cardObject: any;
@@ -24,14 +26,14 @@ export class CardComponent implements OnInit {
   @Output() 
   action = new EventEmitter();
 
-  constructor() { }
+  constructor(private router : Router) { }
 
   ngOnInit(): void { 
   }
 
   actionOnClick(){
     this.action.emit(this.cardObject);
-    
+
   }
   cardDetailOnClick(){
     console.log("cardDetailOnClick")
