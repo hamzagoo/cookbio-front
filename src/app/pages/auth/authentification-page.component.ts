@@ -1,6 +1,11 @@
+import { HttpErrorResponse } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
+import { NgForm } from '@angular/forms';
 import { Router } from '@angular/router';
 import { NbToastrService, NbSpinnerService } from '@nebular/theme';
+import { Role } from 'app/@core/models/role';
+import { User } from 'app/@core/models/user';
+import { AuthentificationService } from 'app/shared/services/authentification/authentification.service';
 /*import { Credentials } from '../pages/authentification/models/credentials';
 import { Utilisateur } from '../pages/authentification/models/utilisateur';
 import { AuthentificationService } from '../pages/authentification/services/authentification.service';
@@ -16,19 +21,16 @@ export class AuthentificationPageComponent  implements OnInit {
   // model: any = {};
   loading = false;
 
-  /*
-  model: Credentials = { email: '', telephone: '', login: '', password: '',
-  appCode: this.authentificationService.getAppCode(), rememberMe: true };
-  error = '';
   returnUrl: string | null = null;
+  model: User = { email: '',username: '', password: '', role: Role.CLEINT};
+  error = '';
+  /*
 
   selectedUser: Utilisateur;
   users: Utilisateur[] = [];
 */
   constructor(
-/*
     private authentificationService: AuthentificationService, 
-    */
     private router: Router,
     private notificationsService: NbToastrService, 
     private spinnerService: NbSpinnerService
@@ -64,17 +66,18 @@ export class AuthentificationPageComponent  implements OnInit {
   }
 
   authentification() {
-    /*
     this.authentificationService.login(this.model).subscribe(
       authenticated => {
         if (authenticated) {
-          // redirection 1ere solution
+          console.log(authenticated)
+          this.authentificationService.setCurrentUser(authenticated);
+          /* redirection 1ere solution
           const url = this.authentificationService.getRedirectUrl();
           console.log('Redirect Url:' + url);
-          // Redirect the user
-          this.router.navigate([url]);
+          // Redirect the user*/
+          this.router.navigate(["/home"]);
         } else {
-          this.invalidCredentialMsg = this.authentificationService.getMessageAuthentification();
+          this.invalidCredentialMsg = "credentials invalide" //this.authentificationService.getMessageAuthentification();
           //this.notificationsService.messageErreurBasDroit('' + this.invalidCredentialMsg);
           this.notificationsService.danger(''+this.invalidCredentialMsg);
           console.log(this.invalidCredentialMsg);
@@ -91,12 +94,12 @@ export class AuthentificationPageComponent  implements OnInit {
       });
   }
 
-
+/*
   // TODO: a enlever
   logout(navigateToHome?: boolean) {
     this.authentificationService.logout();
   }
-
+*/
 
   submitForm(form: NgForm) {
     console.log(form);
@@ -130,18 +133,5 @@ export class AuthentificationPageComponent  implements OnInit {
         this.notificationsService.danger(message);
         console.log(message);
       });
-  }
-      */
-  /*user: Utilisateur = {};
-  
-  constructor() { }
-
-  ngOnInit() {
-  }
-
-  login(){
-
-  }
-  */
   }
 }

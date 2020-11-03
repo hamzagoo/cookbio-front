@@ -2,6 +2,8 @@ import { Component, Input, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
 import { NbMenuService, NbSidebarService } from '@nebular/theme';
+import { User } from 'app/@core/models/user';
+import { AuthentificationService } from 'app/shared/services/authentification/authentification.service';
 import { AnalyticsService } from '../../../@core/utils';
 import { LayoutService } from '../../../@core/utils';
 
@@ -16,11 +18,13 @@ export class HeaderComponent implements OnInit {
 
   userMenu = [{ title: 'Déconnexion' }];
 
+  currentUser: User;
   constructor(private sidebarService: NbSidebarService,
               private menuService: NbMenuService,
               private analyticsService: AnalyticsService,
               private layoutService: LayoutService,
-              private route: Router
+              private route: Router,
+              private auth: AuthentificationService
               ) {
   }
 
@@ -34,6 +38,7 @@ export class HeaderComponent implements OnInit {
       }
     );
 
+    this.currentUser = this.auth.getCurrentUser();
   }
 
   toggleSidebar(): boolean {

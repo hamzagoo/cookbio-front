@@ -16,7 +16,7 @@ const routes: Routes = [{
     path: 'add',
     component: EventsAddComponent,
   }, {
-    path: 'particpate',
+    path: 'particpate/:id',
     component: EventsParticipateComponent,
   }],
 }];

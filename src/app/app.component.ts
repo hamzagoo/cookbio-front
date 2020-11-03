@@ -20,6 +20,7 @@ export class AppComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    /*
     let user: User = {
       id: 1,
       email: "hamza@mountacer.com",
@@ -27,9 +28,9 @@ export class AppComponent implements OnInit {
       role: Role.MANAGER,
       username: "hamza.mountacer"
     }
-    let productsOfCart: Product[] = [];
 
-    localStorage.setItem("currentUser", JSON.stringify(user));
+    localStorage.setItem("currentUser", JSON.stringify(user));*/
+    let productsOfCart: Product[] = [];
     localStorage.setItem("productsOfCart", JSON.stringify(productsOfCart));
  
     this.analytics.trackPageViews();

@@ -7,7 +7,7 @@ import { Evenement } from './evenement';
   providedIn: 'root'
 })
 export class EventsService {
-  private baseUrl = 'http://localhost:8080/evenement  ';
+  private baseUrl = 'http://localhost:8080/evenement';
 
   constructor(
     private http: HttpClient,
@@ -17,6 +17,9 @@ export class EventsService {
     return this.http.get<Evenement[]>(this.baseUrl);
 }
 
+get(id: string):Observable<Evenement>{
+  return this.http.get<Evenement>(this.baseUrl + "/" + id);
+}
 delete(id : number | string):Observable<HttpResponse<any>>{
   let parametres = new HttpParams();
   return this.http.delete<any>(this.baseUrl + "/" + id, { observe: 'response' });

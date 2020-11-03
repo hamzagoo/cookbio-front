@@ -5,6 +5,7 @@ import { MatCardModule } from '@angular/material/card';
 import {MatIconModule} from '@angular/material/icon';
 import {MatButtonModule} from '@angular/material/button';
 import { SlideComponent } from './components/slide/slide.component';
+import { AuthentificationService } from './services/authentification/authentification.service';
 
 @NgModule({
   declarations: [CardComponent, SlideComponent],
@@ -15,6 +16,7 @@ import { SlideComponent } from './components/slide/slide.component';
     MatButtonModule,
   ],
   exports: [ MatCardModule , CardComponent, SlideComponent],
-  schemas: [ NO_ERRORS_SCHEMA ]
+  schemas: [ NO_ERRORS_SCHEMA ],
+  providers: [AuthentificationService]
 })
 export class SharedModule { }

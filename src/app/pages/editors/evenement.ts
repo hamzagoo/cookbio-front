@@ -6,6 +6,6 @@ export class Evenement {
 	date?: string;
 	description?: string;
 	duration?: string;
-	partipants?: Participant[];
+	participants?: Participant[];
 	category?: string;
 }

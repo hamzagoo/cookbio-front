@@ -1,1 +1,60 @@
-<p>events-participate works!</p>
+
+<div class="events-list col-12 shadow-style" >
+    <div class="event col-12">
+       <div class="event-circle"></div>
+       <div class="event-content">
+         <h2 class="event-title">{{event?.title}}</h2>
+         <h4 class="event-date">{{event?.date}}</h4>
+         <p class="event-description">{{event?.description}}</p>
+         <div class="event-badges">
+            <div style="margin-bottom: 5px;">
+               <img src="https://saveurscooketbio.aliou-diaby.com/wp-content/uploads/2020/04/back-arrow.png" style="margin-right: 5px;" width="30px" height="30px"  alt="Icône temps"> 
+               <span >{{event?.duration}}</span>
+             </div>
+             <div style="margin-bottom: 5px;">
+               <img src="https://saveurscooketbio.aliou-diaby.com/wp-content/uploads/2020/04/Icon-awesome-users.png" style="margin-right: 5px;" width="30px" height="30px"  alt="Icône temps"> 
+               <span >{{event?.participants?.length}}</span>
+             </div>
+             <div style="margin-bottom: 5px;">
+               <img src="https://saveurscooketbio.aliou-diaby.com/wp-content/uploads/2020/05/Pâtisserie-salée@2x.png" style="margin-right: 5px;" width="30px" height="30px"  alt="Icône temps"> 
+               <span >{{event?.category}}</span>
+             </div>
+         </div>
+       </div>
+    </div>
+</div>
+
+<hr />
+
+<div class="centered-component card row justify-content-center" >
+  <div class="col-12 forms">
+    <form>  
+          <h2 id="heading" class="titles" >Participer</h2> 
+                <div class="form-group " >
+                  <label for="title">Titre</label>
+                  <input type="text" class="form-control"
+                    id="title" name="firstName">
+                </div>
+                <div class="form-group ">
+                  <label for="description">Description</label>
+                  <input type="text"  id="description" name="lastName" 
+                    class="form-control"  >
+                </div>
+                
+                  <div lass="form-group " >
+                    <label for="price">Email</label>
+                    <input type="text"  id="price" name="email" 
+                      class="form-control"   >
+                    </div>
+                    <div lass="form-group " >
+                      <label for="quantite">Téléphone</label>
+                      <input type="text"  id="quantite" name="phone" 
+                        class="form-control"  >
+                      </div>
+                    <br>
+                    <button mat-raised-button color="primary" class="mat-focus-indicator mat-raised-button mat-button-base mat-primary" (click)= "save()" >
+                      Envoyer
+                    </button> 
+          </form>
+      </div>
+</div>

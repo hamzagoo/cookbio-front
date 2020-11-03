@@ -1,11 +1,11 @@
 
 
 <div class="centered-component card row justify-content-center" >
-   <div class="row col-10">
-       <div class="col-5" style=" padding-left: 0px;   padding-right: 0px;">
-        <img  src="{{product?.image}}" width="400" height="500" alt="Photo of a Shiba Inu" >
+   <div class="row col-12">
+       <div class="col-6" style=" padding-left: 0px;   padding-right: 0px;">
+        <img  src="{{product?.image}}" style="width: inherit;" alt="Photo of a Shiba Inu" >
        </div>
-       <div class="col-7" style=" float: right;width: 48%; clear: none;">
+       <div class="col-6" style="clear: none;">
             <h2 class="title">
                 {{product?.title}}
             </h2>
@@ -19,7 +19,7 @@
             </div>
             <div class="row" style="margin-top: 30px;">
                 <input style="width: 3.631em; text-align: center; margin-right: 5px;" type="number" step="1" min="1" max=""  value="1" title="Qté" size="4" placeholder="" inputmode="numeric" >
-                <button  mat-raised-button color="primary" class="mat-focus-indicator mat-raised-button mat-button-base mat-primary" style="background: #673ab7;">Ajouter au panier</button>
+                <button  mat-raised-button color="primary" class="mat-focus-indicator mat-raised-button mat-button-base mat-primary" (action)="addToCart()"  style="background: #673ab7;">Ajouter au panier</button>
             </div>
        </div>
    </div>

@@ -12,14 +12,12 @@ import { ProductService } from '../product-service';
 })
 export class ProductDetailComponent implements OnInit {
 
-  id$: Observable<string>;
   id: number;
   product : Product;
 
   constructor(private route: ActivatedRoute, private productService : ProductService) { }
 
   ngOnInit(): void {
-    this.id$ =  this.route.paramMap.pipe(map(paramMap => paramMap.get('id')));
 
     this.id = +this.route.snapshot.paramMap.get('id') ;
    this.productService.getbyId(this.id).subscribe(
@@ -32,4 +30,11 @@ export class ProductDetailComponent implements OnInit {
    )
   }
 
+
+  addToCart(){
+
+    var productsOfCart =  JSON.parse(localStorage.getItem("productsOfCart"));
+    productsOfCart.push(this.product);
+    localStorage.setItem("productsOfCart", JSON.stringify(productsOfCart));
+   }
 }
