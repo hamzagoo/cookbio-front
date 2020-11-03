@@ -1,0 +1,31 @@
+<mat-card class="example-card" style="width: 100%; height: 50%;">
+  <div (click)="cardDetailOnClick()" style="cursor: pointer; ">
+      <mat-card-header>
+        <div mat-card-avatar class="example-header-image"></div>
+        <mat-card-title class="titles">{{cardObject?.title}}</mat-card-title>
+      </mat-card-header>
+      <img mat-card-image style="height: 300px" src="{{cardObject?.image}}" alt="Photo of a Shiba Inu">
+      <mat-card-content>
+        <p>
+          {{cardObject?.description}}
+        </p>
+      </mat-card-content>
+  </div>
+    <mat-card-actions style="text-align: right;" >
+      <span  style="color: #673ab7; text-underline-position: auto;text-decoration: underline; font-size: 1em; text-align: center; font-weight: bold; font-family: 'Quicksand', sans-serif;float: left;" data-wahfont="18">{{cardObject?.price}} 
+      <span style="color: #673ab7; font-size: 1em; text-align: center; text-underline-position: auto;text-decoration: underline;font-weight: bold; font-family: 'Quicksand', sans-serif;" data-wahfont="18">€</span></span>
+      <div style="margin-bottom: 5px;">
+        <img src="https://saveurscooketbio.aliou-diaby.com/wp-content/uploads/2020/04/back-arrow.png" style="margin-right: 5px;" width="30px" height="30px"  alt="Icône temps"> 
+        <span data-wahfont="18" >{{cardObject?.time}} min</span>
+      </div>
+      <span >
+        <button mat-mini-fab color="primary" aria-label="Example icon button with a menu icon" (click)="actionOnClick()">
+          <mat-icon>add_shopping_cart</mat-icon>
+        </button>
+      </span>
+    </mat-card-actions>
+ </mat-card>
+
+
+
+

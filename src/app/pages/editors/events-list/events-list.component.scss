@@ -1,0 +1,67 @@
+.bg_header_site .intro_bg_header{
+    background-color: #1D7D6A;
+    color: white;
+    width: 45%;
+    padding: 30px 40px 40px 40px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -ms-flex-pack: distribute;
+    justify-content: space-around;
+}
+
+.bg_header_site .img_bg {
+    width: 55%;
+    height: 500px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+.bg_header_site {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    /* margin-bottom: 110px; */
+}
+
+h2{
+    color: #0C3653;
+}
+.text h2 {
+    color: white;
+}
+.text p {
+    color: white;
+}
+.events-list{
+    
+}
+.event{
+    background-color:white;    
+    padding: 15px;
+    margin-top: 10px !important;
+    max-width: 100% !important;
+    box-shadow: 0 2px 1px -1px rgba(0, 0, 0, 0.2), 0 1px 1px 0 rgba(0, 0, 0, 0.141), 0 1px 3px 0 rgba(0, 0, 0, 0.122);
+}
+.event-circle{
+    
+}
+.event-content{
+    
+}
+.event-title{
+    
+}
+.event-date{
+    
+}
+.event-description{
+    
+}
+.event-badges{
+
+}

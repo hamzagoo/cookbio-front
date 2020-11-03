@@ -1,83 +1,44 @@
-import { Component, OnDestroy, OnInit } from '@angular/core';
-import { NbMediaBreakpointsService, NbMenuService, NbSidebarService, NbThemeService } from '@nebular/theme';
+import { Component, Input, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
-import { UserData } from '../../../@core/data/users';
+import { NbMenuService, NbSidebarService } from '@nebular/theme';
+import { User } from 'app/@core/models/user';
+import { AuthentificationService } from 'app/shared/services/authentification/authentification.service';
+import { AnalyticsService } from '../../../@core/utils';
 import { LayoutService } from '../../../@core/utils';
-import { map, takeUntil } from 'rxjs/operators';
-import { Subject } from 'rxjs';
 
 @Component({
   selector: 'ngx-header',
   styleUrls: ['./header.component.scss'],
   templateUrl: './header.component.html',
 })
-export class HeaderComponent implements OnInit, OnDestroy {
+export class HeaderComponent implements OnInit {
 
-  private destroy$: Subject<void> = new Subject<void>();
-  userPictureOnly: boolean = false;
-  user: any;
+  avatare;
 
-  themes = [
-    {
-      value: 'default',
-      name: 'Light',
-    },
-    {
-      value: 'dark',
-      name: 'Dark',
-    },
-    {
-      value: 'cosmic',
-      name: 'Cosmic',
-    },
-    {
-      value: 'corporate',
-      name: 'Corporate',
-    },
-  ];
+  userMenu = [{ title: 'Déconnexion' }];
 
-  currentTheme = 'default';
-
-  userMenu = [ { title: 'Profile' }, { title: 'Log out' } ];
-
+  currentUser: User;
   constructor(private sidebarService: NbSidebarService,
               private menuService: NbMenuService,
-              private themeService: NbThemeService,
-              private userService: UserData,
+              private analyticsService: AnalyticsService,
               private layoutService: LayoutService,
-              private breakpointService: NbMediaBreakpointsService) {
+              private route: Router,
+              private auth: AuthentificationService
+              ) {
   }
 
   ngOnInit() {
-    this.currentTheme = this.themeService.currentTheme;
 
-    this.userService.getUsers()
-      .pipe(takeUntil(this.destroy$))
-      .subscribe((users: any) => this.user = users.nick);
+     // Chargement du menu de l'utilisateur
+     this.menuService.onItemClick().subscribe(
+      (resp) => {
+        if(resp.item.title == 'Déconnexion'){
+        }
+      }
+    );
 
-    const { xl } = this.breakpointService.getBreakpointsMap();
-    this.themeService.onMediaQueryChange()
-      .pipe(
-        map(([, currentBreakpoint]) => currentBreakpoint.width < xl),
-        takeUntil(this.destroy$),
-      )
-      .subscribe((isLessThanXl: boolean) => this.userPictureOnly = isLessThanXl);
-
-    this.themeService.onThemeChange()
-      .pipe(
-        map(({ name }) => name),
-        takeUntil(this.destroy$),
-      )
-      .subscribe(themeName => this.currentTheme = themeName);
-  }
-
-  ngOnDestroy() {
-    this.destroy$.next();
-    this.destroy$.complete();
-  }
-
-  changeTheme(themeName: string) {
-    this.themeService.changeTheme(themeName);
+    this.currentUser = this.auth.getCurrentUser();
   }
 
   toggleSidebar(): boolean {
@@ -87,8 +48,32 @@ export class HeaderComponent implements OnInit, OnDestroy {
     return false;
   }
 
+  goToHome() {
+    this.menuService.navigateHome();
+  }
+
+  startSearch() {
+    this.analyticsService.trackEvent('startSearch');
+  }
+
   navigateHome() {
     this.menuService.navigateHome();
     return false;
+  }
+
+  goToLogin(){
+
+    this.route.navigate(["./auth/login"]);
+  }
+
+  redirectToProductList(){
+    this.route.navigate(["./pages/home/parametre-generaux/product/list"]);
+  }
+
+  redirectToEventsList(){
+    this.route.navigate(["./pages/events/list"]);
+  }
+  goToPanier(){
+    this.route.navigate(["./pages/panier"]);
   }
 }

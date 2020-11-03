@@ -1,0 +1,17 @@
+
+<div class="col-12" >
+    <div class="col-12"> 
+    <mat-icon aria-label="Acceuils" style="float: left; height: 50px; cursor: pointer;"(click)="redirectToHome()" >keyboard_backspace</mat-icon> 
+    </div>
+    <div class="col-12">
+        <button mat-raised-button color="primary" class="mat-focus-indicator mat-raised-button mat-button-base mat-primary" (click)="redirectToAddProduct()"
+        style=" float: right;" >
+        Ajouter produit</button>
+    </div>
+</div>
+<div class="row" style="display: inline-flex;
+    margin-top: 10px;">
+    <div class="card col-3" *ngFor="let product of products" style=" margin: 0 0 10px 10px; padding: 0;  border-top-left-radius: 12%;" >
+        <ngx-card  [cardObject]="product" [button]="cartButton" (action)="addToCart($event)" (cardDetail)="redirectToDetailProduct($event)" ></ngx-card>
+    </div>
+</div>

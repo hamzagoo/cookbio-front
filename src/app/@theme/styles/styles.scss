@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css?family=Open+Sans:400,600,700&display=swap');
+@import '@angular/material/prebuilt-themes/deeppurple-amber.css';
 
 // themes - our custom or/and out of the box themes
 @import 'themes';
@@ -30,4 +31,22 @@
   @include ngx-pace-theme();
 
   @include nb-overrides();
+
 };
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+
+.centered-component{
+  display: block;
+  margin: 0 auto;
+}
+
+.titles{
+  text-transform: uppercase;
+}
+
+.forms{
+  padding: 40px;
+}

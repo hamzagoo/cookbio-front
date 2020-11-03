@@ -1,0 +1,38 @@
+<section class="bg_header_site col-12">
+    <div class="intro_bg_header">
+       <div class="text">
+          <h2 data-wahfont="24"><p data-wahfont="40">Les ateliers de Saveurs Cook&amp;Bio</p>
+            </h2>
+          <p data-wahfont="18">Les ateliers du chef Duclass sont un véritable moment de partage et de découverte. Pour petit et grand, seul ou accompagné venez découvrir ou approfondir vos talents de cuisinier. À la fin de chaque cours, la récompense ultime goûter se que vos petites mains on réaliser.</p>
+       </div>
+    </div>
+    <div class="img_bg" style="background-image: url(https://saveurscooketbio.aliou-diaby.com/wp-content/uploads/2020/05/SB-Latelier-de-Luca-21.jpg)">
+    </div>
+</section>
+
+<div class="events-list col-12 shadow-style" >
+    <div class="event col-12" *ngFor="let event of events">
+       <div class="event-circle"></div>
+       <div class="event-content">
+         <h2 class="event-title">{{event?.title}}</h2>
+         <h4 class="event-date">{{event?.date}}</h4>
+         <p class="event-description">{{event?.description}}</p>
+         <div class="event-badges">
+            <div style="margin-bottom: 5px;">
+               <img src="https://saveurscooketbio.aliou-diaby.com/wp-content/uploads/2020/04/back-arrow.png" style="margin-right: 5px;" width="30px" height="30px"  alt="Icône temps"> 
+               <span >{{event?.duration}}</span>
+             </div>
+             <div style="margin-bottom: 5px;">
+               <img src="https://saveurscooketbio.aliou-diaby.com/wp-content/uploads/2020/04/Icon-awesome-users.png" style="margin-right: 5px;" width="30px" height="30px"  alt="Icône temps"> 
+               <span >{{event?.participants?.length}}</span>
+             </div>
+             <div style="margin-bottom: 5px;">
+               <img src="https://saveurscooketbio.aliou-diaby.com/wp-content/uploads/2020/05/Pâtisserie-salée@2x.png" style="margin-right: 5px;" width="30px" height="30px"  alt="Icône temps"> 
+               <span >{{event?.category}}</span>
+             </div>
+         </div>
+        <button mat-raised-button color="primary" class="mat-focus-indicator mat-raised-button mat-button-base mat-primary" (click)="redirectToParticipate(event)"
+        >Participer</button>
+       </div>
+    </div>
+</div>
